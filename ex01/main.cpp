@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 11:41:25 by jocalder          #+#    #+#             */
-/*   Updated: 2026/04/06 13:03:36 by jocalder         ###   ########.fr       */
+/*   Updated: 2026/04/07 08:41:30 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ int	main()
 	sp4.addNumber(20);
 	sp4.addNumber(30);
 	sp4.addNumber(40);
-	std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
-	std::cout << "Longest span: " << sp.longestSpan() << std::endl;
+	std::cout << "Shortest span: " << sp4.shortestSpan() << std::endl;
+	std::cout << "Longest span: " << sp4.longestSpan() << std::endl;
 	std::cout << std::endl;
 	
 	std::cout << "TEST 5: RANGE TEST" << std::endl;
@@ -94,6 +94,40 @@ int	main()
 	{
 		std::cerr << e.what() << '\n';
 	}
+	std::cout << std::endl;
 	
+	std::cout << "TEST 6: RANGE OVERFLOW" << std::endl;
+	Span	sp6(3);
+	
+	values.push_back(3);
+	values.push_back(5);
+	values.push_back(9);
+	values.push_back(34);
+	try
+	{
+		sp6.addRange(values.begin(), values.end());
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
+	std::cout << std::endl;
+	
+	std::cout << "TEST 7: 10000 NUMBERS" << std::endl;
+	Span	sp7(10000);
+	std::vector<int>	nums;
+	for (size_t i = 0; i < 10000; i++)
+		nums.push_back(i * 2);
+	
+	try
+	{
+		sp7.addRange(nums.begin(), nums.end());
+		std::cout << "Shortest span: " << sp7.shortestSpan() << std::endl;
+		std::cout << "Longest span: " << sp7.longestSpan() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Error: " << e.what() << std::endl;
+	}
 	return 0;
 }
