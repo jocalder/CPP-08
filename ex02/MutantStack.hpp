@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 10:09:09 by jocalder          #+#    #+#             */
-/*   Updated: 2026/04/07 11:25:48 by jocalder         ###   ########.fr       */
+/*   Updated: 2026/04/23 09:56:17 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <stack>
 #include <deque>
 #include <iostream>
+#include <vector>
 
 template <typename T>
 class MutantStack : public std::stack<T>

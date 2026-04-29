@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/07 10:09:07 by jocalder          #+#    #+#             */
-/*   Updated: 2026/04/07 11:23:34 by jocalder         ###   ########.fr       */
+/*   Updated: 2026/04/23 09:58:50 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,10 @@ int	main()
 	}
 	std::cout << std::endl;
 
-	std::cout << "TEST 4: COMPARE WITH LIST" << std::endl;
+	std::cout << "TEST 4: COMPARE WITH LIST AND VECTOR" << std::endl;
 	MutantStack<int>	ms;
 	std::list<int>		lst;
+	std::vector<int>	vec;
 
 	int		values[] = {5, 17, 3, 5, 737, 0};
 
@@ -75,6 +76,7 @@ int	main()
 	{
 		ms.push(values[i]);
 		lst.push_back(values[i]);
+		vec.push_back(values[i]);
 	}
 	std::cout << "Mutant stack values:" << std::endl;
 	for (MutantStack<int>::iterator	iter = ms.begin(); iter != ms.end(); ++iter)
@@ -83,6 +85,10 @@ int	main()
 	std::cout << "std::list values:" <<std::endl;
 	for (std::list<int>::iterator lst_iter = lst.begin(); lst_iter != lst.end(); ++lst_iter)
 		std::cout << *lst_iter << std::endl;
+	
+	std::cout << "std::vector values:" << std::endl;
+	for (std::vector<int>::iterator vec_iter = vec.begin(); vec_iter != vec.end(); vec_iter++)
+		std::cout << *vec_iter << std::endl;
 		
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: jocalder <jocalder@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 11:41:25 by jocalder          #+#    #+#             */
-/*   Updated: 2026/04/07 08:41:30 by jocalder         ###   ########.fr       */
+/*   Updated: 2026/04/22 11:58:41 by jocalder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,7 +117,7 @@ int	main()
 	Span	sp7(10000);
 	std::vector<int>	nums;
 	for (size_t i = 0; i < 10000; i++)
-		nums.push_back(i * 2);
+		nums.push_back(i);
 	
 	try
 	{
